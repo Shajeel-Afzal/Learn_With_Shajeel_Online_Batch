@@ -216,6 +216,359 @@ if(age > 22){
 console.log(age > 40 ? "You're qualified" : "You're not qualified!");
 
 
+// Variable Naming Rules
+
+// The first character must be a letter, an underscore,
+// or a dollar sign $
+
+var firstName;
+var _lastName;
+var $age;
+
+// The subsequent characters can letters, underscore, 
+// or a dollar sign
+
+var _degree;
+
+// Numbers are not allowed as first character.
+
+// var 4domain; <-- (invalid variable name) 
+
+// Variable names cannot include a mathametical or 
+// logical operator.
+
+// var x2*4; // <-- invalid variable name.
+
+// variable names cannot contain spaces
+
+// var x y; // <-- invalid variable name.
+
+// you cannot use special symbols and reserved keywords 
+// of JavaScript.
+
+// ------------- Data Types -----------------
+
+var price = 55.5; // floating number
+var name = "Shajeel Afzal"; // String
+var myDegree = 'Software Engineer'; // String
+var model = 2020; // int
+var isActive = true; // boolean
+
+// ------------- Aithmetic Operators -------------
+
+// + (Addition)
+// - (subsctraction)
+// / (division)
+// * (multiplication)
+// % (modulus operator)
+// ++ (increment operator)
+// -- (decrement operator)
+
+var x = 10 + 5;
+document.write(x);
+
+x++; // x = x + 1;
+document.write("<br>" + x);
+
+x--; // x = x - 1;
+document.write("<br>" + x);
+
+document.write("<br>" + x++); // <-- Post increment operator
+
+document.write("<br>" + x);
+
+document.write("<br>" + --x); // <-- Preincrement operator
+
+// ------------- Assignment Operator ----------------
+
+// = 
+var x = 10;
+var y = 20;
+
+x = x + y;
+
+// +=
+
+x += y; // <-- x = x+y;
+
+// -=, *=, /=
+
+x = 10;
+y = 20;
+x -= y += 9; // (result -19)
+document.write("<br><br>" + x);
+
+// ------------- Comparison Operator ----------------
+
+// == (Equal to)
+
+console.log("Hello Console!");
+
+console.log(20 == 21);
+console.log(20 == 20);
+console.log("20" == 20);
+console.log("Hello20" == 20);
+
+// === (Equal to but it also compares the type)
+
+console.log("100" === 100);
+
+// != (Not equal to)
+
+// !== (Not equal to but it also compare the data type)
+
+// >
+
+// <
+
+// >=
+
+// <=
+
+// ------------- Logical Operator ----------------
+
+// && (AND Operator)
+
+// || (OR Operator)
+
+console.log((40 > 10) && (5 < 10));
+
+console.log((10 < 5) && (1 < 2));
+
+console.log((10 < 5) || (1 < 2));
+
+
+// ------------- String Operator ----------------
+
+var firstName = "Shajeel";
+var lastName = "Afzal";
+
+var fullName = firstName + " " + lastName;
+
+console.log(fullName);
+
+// ------------- JS Conditions ----------------
+
+// if(condition){
+
+// 	// code
+
+// }
+
+var age = 44;
+
+if(age > 22){
+	console.log("You're qualified!");
+} else if(age < 15){
+	console.log("You're too Young for this course.");
+} else {
+	console.log("You're not qualified!");
+}
+
+// ------------- Ternary Operator ----------------
+// condition ? true : false
+
+console.log(age > 40 ? "You're qualified" : "You're not qualified!");
+
+// ------------- Switch Statement ----------------
+
+/*
+	switch(expression){
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		default:
+			break;
+	}
+*/
+
+var test = 1;
+
+switch(test){
+	case 1:
+		console.log("Case 1.");
+		// break;
+
+	case 2:
+		console.log("Case 2.");
+		break;
+
+	default:
+		console.log("default case.");
+		break;
+}
+
+// ------------- For Loop ----------------
+
+// for(Statement1, Statement2, Statement3){
+// 	// body (statements)
+// }
+
+// statement 1: executes before the loop 
+// starts (Only 1 Time)
+
+// statement 2: define the condition
+// for running the app. (Executes after every execution)
+
+// statement 3: executes after every loop
+
+for(var i=0; i < 1000; i++){
+	console.log("eRozgaar<br>");
+}
+
+// Valid Loop, Execution = 0 times
+for(var a=0; false; a++){
+	console.log("eRozgaar<br>");	
+}
+
+
+// Valid Loop.
+var x = 1;
+for(console.log("for loop statement 1<br>"); 
+	x <= 2; 
+	console.log("for loop statement 3<br>"))
+{
+	console.log("eRozgaar<br>");	
+	x++;
+}
+
+// Valid Loop
+var z=1;
+for(;z<=10;){
+	z++;
+	console.log("eRozgaar<br>");
+}
+
+// ------------- While Loop ----------------
+
+// while(condition){
+
+// }
+
+var xyz = 1;
+while(xyz < 10){
+	console.log("While");
+	xyz++;	
+}
+
+// ------------- do-while Loop ----------------
+
+// do{
+// 	// statements
+// }while(condition);
+
+var zz = 1;
+do{
+	console.log(zz);
+	zz++;
+}while(zz < 10);
+
+do{
+	console.log("do-while");
+}while(false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
