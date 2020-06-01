@@ -470,6 +470,133 @@ do{
 	console.log("do-while");
 }while(false);
 
+// ------------- break/continue ----------------
+
+var start = 0;
+while(start < 20){
+	console.log(start);
+
+	if(start == 9){
+		break;
+	}
+
+	start++;
+}
+
+start = 0;
+while(start < 20){
+	start++;
+
+	if(start == 9){
+		continue;
+	}
+
+	console.log(start);
+
+}
+
+// ------------- functions ----------------
+
+/*
+	1- Code Reuse
+	2- Code Organization
+	3- Code Block
+	4- Function
+	5- Method
+	6- Procedure
+	7- Optional Input(s)
+	8- Options Output (Return Type). When JS reaches a
+	return type, it stops execution.
+	9- A function can only return 1 output.
+	10- A function can have 1 or more inputs.
+	11- A function can be defined inside another function
+	12- A function is executed when it is invoked, or called.
+	13- A function can optionaly be asynchronous
+	14- Task 1 -> Task 2 -> Task 3 (Synchronous Code)
+	15- Task 1
+		Task 2
+		Task 3
+		(Asynchronous)
+	16- async/await are used to make asynchronous and synchronous.
+	17- Syntax:
+
+		function name(OPTIONAL INPUT(S) GOES HERE){
+			// code to be executed.
+		}
+	18- Function naming rules are same as Variable Naming Rules.
+
+*/
+
+function myFunction(){
+	console.log("Function execution started!");
+	alert("This is alert from myFunction!");
+	console.log("Function execution ended!");
+}
+
+function multiplyNums(number1, number2){
+	console.log("<<<<<<<<<<< multiplyNums >>>>>>>>>>>");
+
+	console.log("Number 1: " + number1);
+	console.log("Number 2: " + number2);
+
+	if(number1 == undefined){
+		console.log("Number 1 can't be undefined!");
+		return;
+	}
+
+	if(number2 == undefined){
+		console.log("Number 2 can't be undefined!");
+		return;
+	}
+
+	console.log(number1 * number2);
+}
+
+function multiplyNumsAndReturn(number1, number2){
+	console.log("<<<<<<<<<<< multiplyNumsAndReturn >>>>>>>>>>>");
+
+	console.log("Number 1: " + number1);
+	console.log("Number 2: " + number2);
+
+	if(number1 == undefined){
+		console.log("Number 1 can't be undefined!");
+		return;
+	}
+
+	if(number2 == undefined){
+		console.log("Number 2 can't be undefined!");
+		return;
+	}
+
+	return number1 * number2;
+}
+
+multiplyNums(2, 30);
+
+multiplyNums();
+
+var result = multiplyNumsAndReturn(10, 20);
+
+console.log(result);
+
+// ------------- Alert, Prompt, Confirm ----------------
+
+var fNum = prompt("Enter first number!");
+console.log(fNum);
+
+var secondNum = prompt("Enter second number!");
+console.log(secondNum);
+
+multiplyNums(fNum, secondNum);
+
+var confirmation = confirm("Are you sure?");
+if(confirmation == true){
+	console.log("User clicked on OK Button.");
+} else {
+	console.log("User clicked on the Cancel Button.");
+}
+
+
 
 
 
