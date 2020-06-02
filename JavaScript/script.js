@@ -596,6 +596,101 @@ if(confirmation == true){
 	console.log("User clicked on the Cancel Button.");
 }
 
+// ------------- Objects ----------------
+
+var trainer = {
+	name: "Shajeel Afzal",
+	domain: "Technical",
+	isRealTrainer: true,
+	location: {
+		city: "Okara",
+		province: "Punjab",
+		country: "Pakistan"
+	},
+	mic: [
+		{
+			name: "Blue Snowball"
+		},
+		{
+			name: "ZOOM H6"
+		}
+	],
+};
+
+console.log(trainer.name);
+console.log(trainer.mic[0].name);
+
+console.log(trainer["name"]);
+
+// ------------- Arrays ----------------
+
+var course1 = "Technical";
+var course2 = "Non-Technical";
+var course3 = "Creative";
+
+var courses = new Array("Tech", "Non-Tech", "Creative");
+console.log(courses[2]);
+
+
+courses[0] = "Technical";
+
+console.log(courses[50]);
+
+// Another way of creating Array
+var students = new Array();
+students[0] = "Bilal Akhtar";
+
+// Array Literal (Recommended way)
+var staff = ["Shajeel", "Zia", "Asghar", "Usman"];
+
+console.log(staff.length);
+
+// ------------- Assosiative Arrays ----------------
+
+/* 
+	arrays with named indexes are called 
+	associative array (text instead of numbers)
+*/
+
+var machine = [];
+machine["processor"] = "Ryzen 3900";
+machine["RAM"] = "16x2 DDR4 3600";
+machine["Motherboard"] = "MSI 530 Gaming Wifi";
+
+console.log(machine["RAM"]);
+
+// ------------- Math Object ----------------
+
+console.log(Math.PI);
+console.log(Math.pow(2, 4));
+
+// Read more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+// ------------- Date Object ----------------
+
+var today = new Date();
+var yesterday = new Date();
+
+// UTC: 1970 00:00:00
+// 1 second: 1000 milliseconds
+// 1 minutes: 1000 x 60
+// 1 hour: 1000 x 60 x 60
+// 1 day: 1000 x 60 x 60 x 24 = 86,400,4000
+
+/* 
+	FB Post > 11:10 AM (Pakistan Time) 
+	[But it is 11:10 PM in USA]
+
+	Pakistan Time > UTC (6:13 am)
+	USA > UTC to local time (11:10 pm)
+
+	Australia > UTC to Australia Time
+*/
+
+console.log(today);
+
+console.log(new Date(86400000));
+
 
 
 
