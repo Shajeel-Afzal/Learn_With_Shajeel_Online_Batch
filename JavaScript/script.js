@@ -691,206 +691,128 @@ console.log(today);
 
 console.log(new Date(86400000));
 
+// ------------- DOM Selection Elements ----------------
 
+/*
 
+	JS Selection Methods!
 
+	1- getElementById (Finds the element by ID)
+	2- getElementsByClassName (Finds the Elements based on class name)
+	3- getElementsByTagName (Finds the elements by Tag Name.)
 
+*/
 
+var headingElement = document.getElementById("heading");
+headingElement.innerHTML = "h1 content changed from JS.";
 
+var heading2Elements = document.getElementsByClassName("heading2");
 
+heading2Elements[0].innerHTML = "2nd heading updated from the JS.";
 
+var allH1Tags = document.getElementsByTagName("h1");
 
+allH1Tags[0].innerHTML = "Content updated via JS>>>";
 
+document.body.childNodes; // retursn an array of all elements inside Body Tag.
 
+document.firstChild; // returns the first child node of the element
 
+allH1Tags[0].parentNode;
 
+// ------------- Event Handlging ----------------
 
+function onButtonClick(){
+	alert("Thanks for clicking on the Button!");
+}
 
+function onPageLoaded(){
+	alert("The page has been loaded successfully");
+}
 
+function onPageUnload(){
+	alert("The page has been unloaded!");
+}
 
+function inputChanged(){
+	console.log("<<<< inputChanged >>>>");
+	// var userInput = document.getElementById("name").value;
+	// console.log(userInput);
+}
 
+// ------------- Event Propagation ----------------
 
+/*
 
+	1- Capturing
+		The innermost element's event is handled first.
+		Capturing goes down the DOM.
 
+	2- Bubbling
+		The outermost element's event is handled first.
+		Bubbling goes up the DOM.
 
+	addEventListener(event, function, useCapturing);
 
+	// Capturing
+	addEventListener("click", myFunction, true);
 
+	// Bubbling
+	addEventListener("click", myFunction, false);
 
+*/
 
+function onDivClick(){
+	console.log("<<<<<< onDivClick >>>>>>");
+}
 
+function onPClick(){
+	console.log("<<<<<< onPClick >>>>>>");	
+}
 
+// ------------- JS Form Validation ----------------
 
+function validateForm(){
+	console.log("<<<<< validateForm >>>>>");
 
+	var num1InputElement = document.getElementById("num1");
+	var num2InputElement = document.getElementById("num2");
 
+	var num1 = num1InputElement.value;
+	var num2 = num2InputElement.value;
 
+	console.log(num1);
+	console.log(num2);
 
+	if(num1 == num2){
+		return true;
+	} else {
+		return false;
+	}
+}
 
+// ------------- ECMAScript 6 ----------------
 
+/*
 
+	var variableName;
+	let c = true;
+	const constantVariable;
 
+*/
 
+if(true){
+	let name = "Shajeel Afzal";
 
+	const variabl = 123;
+}
 
+alert(name); // error
 
+// for/of for in loop
 
+let obj = {a: 1, b: 2, c: 3};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for(var v in obj){
+	console.log(v);
+}
