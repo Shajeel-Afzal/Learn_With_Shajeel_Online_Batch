@@ -2,19 +2,7 @@
 
 	echo "This is process.php";
 
-	$hostName = "localhost";
-	$databaseName = "shop_database";
-	$password = "";
-	$userName = "root";
-	$CUSTOMERS_TABLE = "customers";
-
-	$mySqli = new mysqli($hostName, $userName, $password, $databaseName);
-
-	if($mySqli->connect_error){
-		die($mySqli->connect_error);
-	}
-
-	echo "<br>Database Connection Succcesful!<br><br>";
+	require_once "connection.php";
 
 	$query = "SELECT * from ".$CUSTOMERS_TABLE;
 
@@ -33,10 +21,11 @@
 
 		$row = $result->fetch_assoc();
 
-
-
 		echo "<br>";
-		echo $row['id']." ".$row['name'];
+		echo $row['id']." ".$row['name']." <button name='delete'>Delete</button>";
 	}
+
+	$result->close();
+
 
 ?>
