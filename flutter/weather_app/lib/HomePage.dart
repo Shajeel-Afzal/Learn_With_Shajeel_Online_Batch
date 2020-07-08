@@ -35,6 +35,8 @@ class _HomePageState extends State<HomePage> {
       return "images/lahore.jpg";
     } else if (cityName == "Karachi") {
       return "images/karachi.jpg";
+    } else {
+      return "images/karachi.jpg";
     }
   }
 
