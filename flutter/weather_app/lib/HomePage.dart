@@ -67,74 +67,77 @@ class _HomePageState extends State<HomePage> {
                 // ),
                 Padding(
                   padding: const EdgeInsets.only(top: 100),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        (weatherModel.main.temp - 273.15).toStringAsFixed(0),
-                        style: TextStyle(color: Colors.white, fontSize: 140),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                FontAwesomeIcons.cloudSun,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 16,
-                              ),
-                              Text(
-                                weatherModel.weather[0].main,
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 16,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                FontAwesomeIcons.wind,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 16,
-                              ),
-                              Text(
-                                weatherModel.wind.speed.toString(),
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 16,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.pause_circle_outline,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 16,
-                              ),
-                              Text(
-                                "Rain Percentage",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
+                  child: Container(
+                    color: Color(0x66000000),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          (weatherModel.main.temp - 273.15).toStringAsFixed(0),
+                          style: TextStyle(color: Colors.white, fontSize: 140),
+                        ),
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.cloudSun,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 16,
+                                ),
+                                Text(
+                                  weatherModel.weather[0].main,
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 16,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.wind,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 16,
+                                ),
+                                Text(
+                                  weatherModel.wind.speed.toString(),
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 16,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.pause_circle_outline,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 16,
+                                ),
+                                Text(
+                                  "Rain Percentage",
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
