@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chatting_app/AuthService.dart';
+import 'package:flutter_chatting_app/HomeScreen.dart';
 import 'package:flutter_chatting_app/LoginScreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +18,11 @@ class _SplashScreenState extends State<SplashScreen> {
         await Future.delayed(Duration(seconds: 1));
 
         if (value) {
-          // Navigate user to Chat Screen
+          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+            builder: (BuildContext context) {
+              return HomeScreen();
+            },
+          ), (route) => false);
         } else {
           Navigator.pop(context);
 

@@ -1,28 +1,38 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
-  Future<void> loginUser(String email, String password) async {
+  Future<void> logoutUser() async {
+    if (await isUserLogin()) {
+      await FirebaseAuth.instance.signOut();
+    }
+  }
+
+  Future<void> signupUser(String email, String password) async {
     AuthResult authResult = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password);
+  }
 
-    print(authResult);
+  Future<void> forgotPassword(String email) async {
+    await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+  }
 
-    // await FirebaseAuth.instance.verifyPhoneNumber(
-    //   phoneNumber: "+923003419643",
-    //   timeout: Duration(seconds: 10),
-    //   verificationCompleted: (phoneAuthCredential) {
-    //     print("verificationCompleted Called!");
-    //   },
-    //   verificationFailed: (error) {
-    //     print("verification failed!");
-    //   },
-    //   codeSent: (verificationId, [forceResendingToken]) {
-    //     print("codeSent");
-    //   },
-    //   codeAutoRetrievalTimeout: (verificationId) {
-    //     print("codeAutoRetrievalTimeout called!");
-    //   },
-    // );
+  Future<String> loginUser(String email, String password) async {
+    try {
+      if (await isUserLogin()) {
+        return "success";
+      }
+
+      AuthResult authResult = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: email.trim(), password: password.trim());
+
+      if (authResult.user != null)
+        return "success";
+      else
+        return "Login Failed!";
+    } catch (e) {
+      return e.message;
+    }
   }
 
   Future<bool> isUserLogin() async {
