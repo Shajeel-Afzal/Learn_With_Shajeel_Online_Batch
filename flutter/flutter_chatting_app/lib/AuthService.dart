@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_chatting_app/DatabaseService.dart';
 
 class AuthService {
   Future<void> logoutUser() async {
@@ -26,9 +27,11 @@ class AuthService {
           .signInWithEmailAndPassword(
               email: email.trim(), password: password.trim());
 
-      if (authResult.user != null)
+      if (authResult.user != null) {
+        await DatabaseService().saveUserInformation(authResult.user);
+
         return "success";
-      else
+      } else
         return "Login Failed!";
     } catch (e) {
       return e.message;
