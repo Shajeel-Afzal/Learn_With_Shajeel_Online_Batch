@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chatting_app/AuthService.dart';
+import 'package:flutter_chatting_app/ChatScreen.dart';
 import 'package:flutter_chatting_app/DatabaseService.dart';
 import 'package:flutter_chatting_app/LoginScreen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -58,11 +59,23 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Widget> widgets = List();
     for (var user in _users) {
       widgets.add(
-        Padding(
-          padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
-          child: Card(
-            child: ListTile(
-              title: Text(user),
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return ChatScreen();
+                },
+              ),
+            );
+          },
+          child: Padding(
+            padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+            child: Card(
+              child: ListTile(
+                title: Text(user),
+              ),
             ),
           ),
         ),

@@ -96,6 +96,24 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  RaisedButton(
+                    onPressed: () async {
+                      bool result =
+                          await AuthService().signupUser(_email, _password);
+
+                      if (result) {
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return HomeScreen();
+                          },
+                        ), (route) => false);
+                      }
+                    },
+                    child: Text("Signup"),
                   )
                 ],
               ),

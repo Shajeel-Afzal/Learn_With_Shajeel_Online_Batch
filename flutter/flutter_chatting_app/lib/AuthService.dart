@@ -8,9 +8,16 @@ class AuthService {
     }
   }
 
-  Future<void> signupUser(String email, String password) async {
+  Future<bool> signupUser(String email, String password) async {
     AuthResult authResult = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: password);
+        .createUserWithEmailAndPassword(
+            email: email.trim(), password: password.trim());
+
+    if (authResult.user != null) {
+      await DatabaseService().saveUserInformation(authResult.user);
+      return true;
+    } else
+      return false;
   }
 
   Future<void> forgotPassword(String email) async {
