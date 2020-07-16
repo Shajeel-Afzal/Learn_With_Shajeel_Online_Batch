@@ -19,6 +19,8 @@ class DatabaseService {
         print("key: " + key + ", value: " + value['email']);
 
         if (value['email'] != currentUser.email) {
+          userModel = UserModel();
+
           userModel.email = value['email'];
           userModel.uid = key;
           users.add(userModel);

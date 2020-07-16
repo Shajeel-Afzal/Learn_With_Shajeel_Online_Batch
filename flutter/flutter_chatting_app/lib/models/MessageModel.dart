@@ -1,6 +1,6 @@
 class MessageModel {
-  String _message;
-  String _uid;
+  String message;
+  String uid;
   int timestampe;
   int type;
 }
