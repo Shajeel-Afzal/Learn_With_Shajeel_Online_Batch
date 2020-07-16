@@ -3,6 +3,7 @@ import 'package:flutter_chatting_app/AuthService.dart';
 import 'package:flutter_chatting_app/ChatScreen.dart';
 import 'package:flutter_chatting_app/DatabaseService.dart';
 import 'package:flutter_chatting_app/LoginScreen.dart';
+import 'package:flutter_chatting_app/models/UserModel.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<String> _users = List();
+  List<UserModel> _users = List();
 
   @override
   void initState() {
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
               context,
               MaterialPageRoute(
                 builder: (BuildContext context) {
-                  return ChatScreen();
+                  return ChatScreen(user);
                 },
               ),
             );
@@ -74,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
             child: Card(
               child: ListTile(
-                title: Text(user),
+                title: Text(user.email),
               ),
             ),
           ),

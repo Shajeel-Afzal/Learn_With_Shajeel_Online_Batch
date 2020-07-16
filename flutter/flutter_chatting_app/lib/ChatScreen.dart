@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chatting_app/models/MessageModel.dart';
+import 'package:flutter_chatting_app/models/UserModel.dart';
 
 class ChatScreen extends StatefulWidget {
+  UserModel userModel;
+
+  ChatScreen(this.userModel);
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
